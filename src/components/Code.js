@@ -5,7 +5,7 @@ export class Code extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { snippet: null, steps: {}, currentStep: 0 };
+    this.state = { snippet: null, steps: {}, currentStep: 0, caption: null };
   }
 
   componentDidUpdate() {
@@ -14,10 +14,11 @@ export class Code extends Component {
 
   componentDidMount() {
     import(`../snippet/${this.props.snippet}`)
-      .then(({ snippet, steps }) =>
+      .then(({ snippet, steps, caption }) =>
         this.setState({
           snippet,
-          steps
+          steps,
+          caption
         })
       )
       .then(() => document.addEventListener("keypress", this.handleKeypress));
@@ -32,24 +33,30 @@ export class Code extends Component {
 
     const nextState = currentStep + 1;
 
-    if (e.key === " " && steps[nextState]) {
-      this.setState({ currentStep: nextState });
-      this.props.onLineChange(steps[nextState]);
+    if (e.key === " ") {
+      if (steps[nextState]) {
+        this.setState({ currentStep: nextState });
+        return this.props.onLineChange(steps[nextState]);
+      }
+
+      this.setState({ currentStep: 0 });
     }
   };
 
   render() {
-    const { snippet, currentStep, steps } = this.state;
+    const { snippet, currentStep, steps, caption } = this.state;
 
     return (
       <Fragment>
         <h1>Code</h1>
+        {steps && <p>Press space to interact</p>}
         <pre
           className="line-numbers code"
           data-line={currentStep ? steps[currentStep].line : 0}
         >
           <code className="language-javascript">{snippet}</code>
         </pre>
+        {caption && <p className="italic">{caption}</p>}
       </Fragment>
     );
   }

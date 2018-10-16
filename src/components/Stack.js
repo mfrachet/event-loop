@@ -4,6 +4,7 @@ import "./Stack.css";
 export const Stack = ({ funcs }) => (
   <Fragment>
     <h1 className="center">Stack </h1>
+    <p>Each block is a function</p>
     <div className="stack">
       {funcs.map((name, index) => (
         <h2 className="stack-item center" key={`${name}-${index}`}>
