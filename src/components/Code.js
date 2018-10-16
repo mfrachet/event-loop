@@ -1,4 +1,5 @@
-import React, { Fragment, Component } from "react";
+import React, { Component, Fragment } from "react";
+import "./Code.css";
 
 export class Code extends Component {
   constructor(props) {
@@ -44,7 +45,7 @@ export class Code extends Component {
       <Fragment>
         <h1>Code</h1>
         <pre
-          className="line-numbers"
+          className="line-numbers code"
           data-line={currentStep ? steps[currentStep].line : 0}
         >
           <code className="language-javascript">{snippet}</code>
