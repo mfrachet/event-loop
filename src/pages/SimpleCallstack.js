@@ -11,7 +11,7 @@ export class SimpleCallstack extends Component {
   }
 
   handleChangeLine = step => {
-    if (step.line === 0) {
+    if (step === null) {
       return this.setState({ funcs: [] });
     }
 

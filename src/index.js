@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-import "milligram/dist/milligram.min.css";
+import "./milligram.min.css";
 
 import "./index.css";
 import App from "./App";
