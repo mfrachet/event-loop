@@ -1,9 +1,10 @@
 import React from "react";
+import { Subtitle } from "./Subtitle";
 import "./Stack.css";
 
 export const Stack = ({ funcs, name }) => (
   <div className="stack-center">
-    <h2 className="center">{name} </h2>
+    <Subtitle>{name} </Subtitle>
     <p>Each block is a function</p>
     <div className="stack">
       {funcs.map((name, index) => (

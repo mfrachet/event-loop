@@ -1,17 +1,29 @@
-import { SimpleCallstack } from "./pages/SimpleCallstack";
-import { AsyncStack } from "./pages/AsyncStack";
+import { Callstack } from "./pages/Callstack";
+import { TaskQueue } from "./pages/TaskQueue";
+import { EventLoop } from "./pages/EventLoop";
+import { AsyncWorld } from "./pages/AsyncWorld";
 import { SetTimeoutFTW } from "./pages/SetTimeoutFtw";
 
 export const routes = [
   {
-    name: "Simple callstack",
-    to: "/simple-stack",
-    Component: SimpleCallstack
+    name: "Callstack",
+    to: "/callstack",
+    Component: Callstack
   },
   {
-    name: "Async stack",
-    to: "/async-stack",
-    Component: AsyncStack
+    name: "Task queue",
+    to: "/task-queue",
+    Component: TaskQueue
+  },
+  {
+    name: "Event loop",
+    to: "/event-loop",
+    Component: EventLoop
+  },
+  {
+    name: "Async world",
+    to: "/async-world",
+    Component: AsyncWorld
   },
   {
     name: "SetTimeout",

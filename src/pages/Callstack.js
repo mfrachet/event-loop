@@ -2,8 +2,9 @@ import React, { Component, Fragment } from "react";
 import { Cols, Col } from "../components/Cols";
 import { Stack } from "../components/Stack";
 import { Code } from "../components/Code";
+import { Title } from "../components/Title";
 
-export class SimpleCallstack extends Component {
+export class Callstack extends Component {
   constructor(props) {
     super(props);
 
@@ -31,13 +32,13 @@ export class SimpleCallstack extends Component {
   render() {
     return (
       <Fragment>
-        <h1>Synchronous execution</h1>
+        <Title>Callstack</Title>
         <Cols>
           <Col>
             <Code snippet="simple" onLineChange={this.handleChangeLine} />
           </Col>
           <Col size={25}>
-            <Stack funcs={this.state.funcs} name="Call stack" />
+            <Stack funcs={this.state.funcs} name="Callstack" />
           </Col>
         </Cols>
       </Fragment>

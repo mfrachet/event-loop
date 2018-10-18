@@ -2,8 +2,9 @@ import React, { Component, Fragment } from "react";
 import { Cols, Col } from "../components/Cols";
 import { Stack } from "../components/Stack";
 import { Code } from "../components/Code";
+import { Title } from "../components/Title";
 
-export class AsyncStack extends Component {
+export class TaskQueue extends Component {
   constructor(props) {
     super(props);
 
@@ -37,7 +38,7 @@ export class AsyncStack extends Component {
   render() {
     return (
       <Fragment>
-        <h1>Asynchronous execution</h1>
+        <Title>Task queue</Title>
         <Cols>
           <Col>
             <Code snippet="async" onLineChange={this.handleChangeLine} />

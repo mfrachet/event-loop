@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import { Subtitle } from "./Subtitle";
 import "./Code.css";
 
 export class Code extends Component {
@@ -50,8 +51,12 @@ export class Code extends Component {
 
     return (
       <Fragment>
-        <h2>Code</h2>
-        {steps && <p>Press space to interact</p>}
+        <Subtitle>Code</Subtitle>
+        {steps && (
+          <p>
+            Press <span className="space">space</span> to interact
+          </p>
+        )}
         <pre
           className="line-numbers"
           data-line={currentStep ? steps[currentStep].line : 0}
