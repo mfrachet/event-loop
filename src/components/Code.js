@@ -31,15 +31,17 @@ export class Code extends Component {
   handleKeypress = e => {
     const { steps, currentStep } = this.state;
 
-    const nextState = currentStep + 1;
+    if (steps) {
+      const nextState = currentStep + 1;
 
-    if (e.key === " ") {
-      if (steps[nextState]) {
-        this.setState({ currentStep: nextState });
-        return this.props.onLineChange(steps[nextState]);
+      if (e.key === " ") {
+        if (steps[nextState]) {
+          this.setState({ currentStep: nextState });
+          return this.props.onLineChange(steps[nextState]);
+        }
+
+        this.setState({ currentStep: 0 });
       }
-
-      this.setState({ currentStep: 0 });
     }
   };
 
@@ -51,7 +53,7 @@ export class Code extends Component {
         <h1>Code</h1>
         {steps && <p>Press space to interact</p>}
         <pre
-          className="line-numbers code"
+          className="line-numbers"
           data-line={currentStep ? steps[currentStep].line : 0}
         >
           <code className="language-javascript">{snippet}</code>
