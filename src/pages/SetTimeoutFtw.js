@@ -37,7 +37,7 @@ export class SetTimeoutFTW extends Component {
           {isPlaying ? "Waiting..." : "Play"}
         </button>
 
-        <Code snippet="setTimeout" />
+        <Code snippet="setTimeoutDead" />
 
         {isPlaying && <div>Computing...</div>}
       </Fragment>

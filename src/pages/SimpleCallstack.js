@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Cols, Col } from "../components/Cols";
 import { Stack } from "../components/Stack";
 import { Code } from "../components/Code";
@@ -30,14 +30,17 @@ export class SimpleCallstack extends Component {
 
   render() {
     return (
-      <Cols>
-        <Col>
-          <Code snippet="simple" onLineChange={this.handleChangeLine} />
-        </Col>
-        <Col size={25}>
-          <Stack funcs={this.state.funcs} />
-        </Col>
-      </Cols>
+      <Fragment>
+        <h1>Synchronous execution</h1>
+        <Cols>
+          <Col>
+            <Code snippet="simple" onLineChange={this.handleChangeLine} />
+          </Col>
+          <Col size={25}>
+            <Stack funcs={this.state.funcs} name="Call stack" />
+          </Col>
+        </Cols>
+      </Fragment>
     );
   }
 }

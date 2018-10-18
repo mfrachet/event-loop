@@ -50,7 +50,7 @@ export class Code extends Component {
 
     return (
       <Fragment>
-        <h1>Code</h1>
+        <h2>Code</h2>
         {steps && <p>Press space to interact</p>}
         <pre
           className="line-numbers"
