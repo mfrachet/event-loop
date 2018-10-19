@@ -3,7 +3,7 @@ import { Cols, Col } from "../../components/Cols";
 import "./Pokemon.css";
 import bulba from "./1.png";
 
-export const PokeDetail = props => (
+export const PokeDetail = () => (
   <div className="poke-detail">
     <div className="poke-head">Bulbasaur</div>
     <Cols>
