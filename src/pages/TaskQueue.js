@@ -44,10 +44,18 @@ export class TaskQueue extends Component {
             <Code snippet="async" onLineChange={this.handleChangeLine} />
           </Col>
           <Col>
-            <Stack funcs={this.state.callstack} name="Call stack" />
+            <Stack
+              funcs={this.state.callstack}
+              name="Call stack"
+              color="#E91E63"
+            />
           </Col>
           <Col>
-            <Stack funcs={this.state.taskQueue} name="Task queue" />
+            <Stack
+              funcs={this.state.taskQueue}
+              name="Task queue"
+              color="#4CAF50"
+            />
           </Col>
         </Cols>
       </Fragment>

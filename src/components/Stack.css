@@ -15,7 +15,21 @@
 .stack-item {
   height: 100px;
   line-height: 100px;
-  margin: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
   background-color: #aaaaaa;
   color: #ffffff;
+  animation: animate-item 0.3s linear;
+}
+
+@keyframes animate-item {
+  from {
+    opacity: 0;
+    margin-bottom: 50px;
+  }
+  to {
+    opacity: 1;
+    margin-bottom: 0px;
+  }
 }
