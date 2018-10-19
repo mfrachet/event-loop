@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Title } from "../components/Title";
+import { Donut } from "../components/Donut";
 
 export class EventLoop extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ export class EventLoop extends Component {
     return (
       <Fragment>
         <Title>Event loop</Title>
+        <Donut />
       </Fragment>
     );
   }

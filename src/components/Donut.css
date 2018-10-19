@@ -1,0 +1,26 @@
+.donut {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  border: 50px solid #dddddd;
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(225px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(225px) rotate(-360deg);
+  }
+}
+
+.donut-item {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  animation: orbit 4s linear infinite;
+}
