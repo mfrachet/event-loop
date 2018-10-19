@@ -1,0 +1,9 @@
+.marble {
+  height: 70px;
+  line-height: 70px;
+  color: #ffffff;
+  text-align: center;
+  width: 70px;
+  background-color: #888888;
+  border-radius: 50%;
+}

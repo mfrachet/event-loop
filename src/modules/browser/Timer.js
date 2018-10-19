@@ -19,7 +19,7 @@ export class Timer extends Component {
       const time = this.now();
       this.setState({ time });
 
-      this.props.onChange && this.props.onChange(time);
+      this.props.onChange(time);
     }, 1000);
   }
 
@@ -30,11 +30,7 @@ export class Timer extends Component {
   render() {
     const { time } = this.state;
 
-    return (
-      <div>
-        It's <strong>{time}</strong> oclock
-      </div>
-    );
+    return <strong>{time}</strong>;
   }
 }
 

@@ -1,0 +1,24 @@
+.thread {
+  width: 1px;
+  background-color: #888888;
+
+  height: 300px;
+}
+
+.thread-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes move {
+  from {
+    margin-top: 0;
+  }
+  to {
+    margin-top: 230px;
+  }
+}
+
+.animate-move {
+  animation-name: move;
+}

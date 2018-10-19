@@ -1,0 +1,13 @@
+.poke-detail {
+  border: 1px solid #f1f1f1;
+  border-radius: 3px;
+}
+
+.poke-head {
+  padding: 10px;
+  background-color: #f1f1f1;
+}
+
+.poke-detail p {
+  padding: 10px;
+}

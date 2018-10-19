@@ -3,11 +3,11 @@ import { Timer } from "./Timer";
 import "./Browser.css";
 
 export class Browser extends Component {
-  constructor(props) {
-    super(props);
-  }
+  handleFetchClick = () => this.props.onButtonPress("onClick");
 
   render() {
+    const { children } = this.props;
+
     return (
       <div className="browser">
         <div className="browser-row">
@@ -33,9 +33,14 @@ export class Browser extends Component {
         </div>
 
         <div className="browser-content">
+          <span className="float-right">
+            <Timer onChange={this.props.onTimeChange} />
+          </span>
           <h3>An asynchronous world</h3>
-          <Timer />
-          <p>How to create a detailed browser window look with CSS.</p>
+
+          <button onClick={this.handleFetchClick}>Show me Bulbasaur!</button>
+
+          {children}
         </div>
       </div>
     );
