@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Title } from "../components/Title";
-import { Browser } from "../components/Browser";
+import { Browser } from "../modules/browser";
 import { Cols, Col } from "../components/Cols";
 
 export class AsyncWorld extends Component {

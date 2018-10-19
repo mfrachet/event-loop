@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { Subtitle } from "./Subtitle";
+import { Subtitle } from "../../components/Subtitle";
 import "./Code.css";
 
 export class Code extends Component {
@@ -14,7 +14,7 @@ export class Code extends Component {
   }
 
   componentDidMount() {
-    import(`../snippet/${this.props.snippet}`)
+    import(`./snippet/${this.props.snippet}`)
       .then(({ snippet, steps, caption }) =>
         this.setState({
           snippet,

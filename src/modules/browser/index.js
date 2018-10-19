@@ -1,11 +1,10 @@
 import React, { Component } from "react";
+import { Timer } from "./Timer";
 import "./Browser.css";
 
 export class Browser extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {};
   }
 
   render() {
@@ -18,7 +17,11 @@ export class Browser extends Component {
             <span className="browser-dot" style={{ background: "#5AC05A" }} />
           </div>
           <div className="browser-column browser-middle">
-            <input type="text" value="http://www.w3schools.com" />
+            <input
+              type="text"
+              value="https://mfrachet.github.io/event-loop"
+              readOnly
+            />
           </div>
           <div className="browser-column browser-right">
             <div style={{ float: "right" }}>
@@ -30,7 +33,8 @@ export class Browser extends Component {
         </div>
 
         <div className="browser-content">
-          <h3>Browser Window</h3>
+          <h3>An asynchronous world</h3>
+          <Timer />
           <p>How to create a detailed browser window look with CSS.</p>
         </div>
       </div>

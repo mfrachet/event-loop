@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { Cols, Col } from "../components/Cols";
 import { Stack } from "../components/Stack";
-import { Code } from "../components/Code";
+import { Code } from "../modules/code";
 import { Title } from "../components/Title";
 
 export class TaskQueue extends Component {

@@ -1,5 +1,5 @@
 import React, { Fragment, Component } from "react";
-import { Code } from "../components/Code";
+import { Code } from "../modules/code";
 
 export class SetTimeoutFTW extends Component {
   constructor(props) {
