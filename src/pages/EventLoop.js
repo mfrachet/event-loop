@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from "react";
-import { Title } from "../components/Title";
 import { Subtitle } from "../components/Subtitle";
 import { Donut } from "../components/Donut";
 import { Cols, Col } from "../components/Cols";
 import { Queue } from "../components/Queue";
+import { Browser } from "../modules/browser";
 
 export class EventLoop extends Component {
   static count = 0;
@@ -11,7 +11,7 @@ export class EventLoop extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { queue: [], lastCall: null };
+    this.state = { queue: [], browserItems: [] };
   }
 
   componentDidMount() {
@@ -39,29 +39,28 @@ export class EventLoop extends Component {
   };
 
   dequeue = () => {
-    const { queue } = this.state;
+    const { queue, browserItems } = this.state;
 
     if (queue.length) {
       const lastCall = queue.shift();
 
-      this.setState({ queue, lastCall: lastCall.value });
+      browserItems.push(lastCall);
+
+      this.setState({ queue, browserItems });
     }
   };
 
   render() {
-    const { queue, lastCall } = this.state;
+    const { queue, browserItems } = this.state;
     return (
       <Fragment>
         <Cols>
           <Col>
             <Subtitle centered>Main Thread</Subtitle>
-            {lastCall && (
-              <Fragment>
-                <pre>
-                  <code className="language-javascript">{lastCall}</code>
-                </pre>
-              </Fragment>
-            )}
+            <Browser>
+              Hello world
+              {browserItems.length && "YOU STOPPED THERE"}
+            </Browser>
           </Col>
           <Col>
             <Subtitle centered>Event loop</Subtitle>
