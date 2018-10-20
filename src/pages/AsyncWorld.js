@@ -4,6 +4,7 @@ import { Browser } from "../modules/browser";
 import { Cols, Col } from "../components/Cols";
 import { Thread } from "../modules/thread";
 import { PokeDetail } from "../modules/pokemon";
+import { Timer } from "../modules/browser/Timer";
 
 export class AsyncWorld extends Component {
   constructor(props) {
@@ -19,8 +20,7 @@ export class AsyncWorld extends Component {
 
   handleTimeChange = newTime => this.setState({ timeCalls: [newTime] });
 
-  handleButtonPress = buttonName =>
-    this.setState({ buttonCalls: [buttonName] });
+  handleButtonPress = () => this.setState({ buttonCalls: ["onClick"] });
 
   handleButtonDequeue = () => {
     const [head, ...tail] = this.state.buttonCalls;
@@ -62,10 +62,15 @@ export class AsyncWorld extends Component {
             />
           </Col>
           <Col>
-            <Browser
-              onTimeChange={this.handleTimeChange}
-              onButtonPress={this.handleButtonPress}
-            >
+            <Browser>
+              <span className="float-right">
+                <Timer onChange={this.handleTimeChange} />
+              </span>
+              <h3>An asynchronous world</h3>
+
+              <button onClick={this.handleButtonPress}>
+                Show me Bulbasaur!
+              </button>
               {hasLoaded && <PokeDetail />}
             </Browser>
           </Col>

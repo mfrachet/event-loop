@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-import { Timer } from "./Timer";
 import "./Browser.css";
 
 export class Browser extends Component {
-  handleFetchClick = () => this.props.onButtonPress("onClick");
-
   render() {
     const { children } = this.props;
 
@@ -32,16 +29,7 @@ export class Browser extends Component {
           </div>
         </div>
 
-        <div className="browser-content">
-          <span className="float-right">
-            <Timer onChange={this.props.onTimeChange} />
-          </span>
-          <h3>An asynchronous world</h3>
-
-          <button onClick={this.handleFetchClick}>Show me Bulbasaur!</button>
-
-          {children}
-        </div>
+        <div className="browser-content">{children}</div>
       </div>
     );
   }
