@@ -24,3 +24,7 @@
   background-color: #ffffff;
   animation: orbit 4s linear infinite;
 }
+
+.donut-content {
+  position: absolute;
+}

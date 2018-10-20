@@ -55,7 +55,16 @@ export class EventLoop extends Component {
 
         <Cols>
           <Col>
-            <Donut onHandle={this.dequeue}>{lastCall}</Donut>
+            <Donut onHandle={this.dequeue}>
+              {lastCall && (
+                <Fragment>
+                  <h3>In the main thread</h3>
+                  <pre>
+                    <code className="language-javascript">{lastCall}</code>
+                  </pre>
+                </Fragment>
+              )}
+            </Donut>
           </Col>
           <Col>
             <Queue items={queue} />

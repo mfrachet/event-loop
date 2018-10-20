@@ -19,7 +19,7 @@ export class Donut extends Component {
     return (
       <div className="donut">
         <div className="donut-item" />
-        {this.props.children}
+        <div className="donut-content">{this.props.children}</div>
       </div>
     );
   }
