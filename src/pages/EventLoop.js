@@ -2,8 +2,11 @@ import React, { Component, Fragment } from "react";
 import { Title } from "../components/Title";
 import { Donut } from "../components/Donut";
 import { Cols, Col } from "../components/Cols";
+import { Queue } from "../components/Queue";
 
 export class EventLoop extends Component {
+  static count = 0;
+
   constructor(props) {
     super(props);
 
@@ -22,7 +25,10 @@ export class EventLoop extends Component {
     if (e.key === " ") {
       const { queue } = this.state;
 
-      queue.push("Some call");
+      EventLoop.count++;
+      queue.push(`setTimeout(
+  () => console.log(${EventLoop.count}),
+0)`);
 
       this.setState({ queue });
     }
@@ -47,9 +53,7 @@ export class EventLoop extends Component {
             <Donut onHandle={this.dequeue} />
           </Col>
           <Col>
-            {queue.map((name, index) => (
-              <div key={`${name}-${index}`}>{name}</div>
-            ))}
+            <Queue items={queue} />
           </Col>
         </Cols>
       </Fragment>

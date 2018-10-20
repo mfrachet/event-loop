@@ -1,0 +1,26 @@
+.queue {
+  display: flex;
+  flex-direction: row;
+  margin-top: 185px;
+  margin-left: -150px;
+}
+
+.queue-item {
+  margin-right: 5px;
+  animation: animate-left 0.3s linear;
+}
+
+.queue-item pre {
+  padding-right: 30px;
+}
+
+@keyframes animate-left {
+  from {
+    opacity: 0;
+    margin-left: 50px;
+  }
+  to {
+    opacity: 1;
+    margin-left: 0px;
+  }
+}
