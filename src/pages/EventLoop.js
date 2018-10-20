@@ -10,7 +10,7 @@ export class EventLoop extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { queue: [] };
+    this.state = { queue: [], lastCall: null };
   }
 
   componentDidMount() {
@@ -26,9 +26,12 @@ export class EventLoop extends Component {
       const { queue } = this.state;
 
       EventLoop.count++;
-      queue.push(`setTimeout(
+      queue.push({
+        funcName: `setTimeout(
   () => console.log(${EventLoop.count}),
-0)`);
+0)`,
+        value: `console.log(${EventLoop.count})`
+      });
 
       this.setState({ queue });
     }
@@ -37,20 +40,22 @@ export class EventLoop extends Component {
   dequeue = () => {
     const { queue } = this.state;
 
-    queue.shift();
+    if (queue.length) {
+      const lastCall = queue.shift();
 
-    this.setState({ queue });
+      this.setState({ queue, lastCall: lastCall.value });
+    }
   };
 
   render() {
-    const { queue } = this.state;
+    const { queue, lastCall } = this.state;
     return (
       <Fragment>
         <Title>Event loop</Title>
 
         <Cols>
           <Col>
-            <Donut onHandle={this.dequeue} />
+            <Donut onHandle={this.dequeue}>{lastCall}</Donut>
           </Col>
           <Col>
             <Queue items={queue} />

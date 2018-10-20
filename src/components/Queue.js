@@ -9,10 +9,10 @@ export class Queue extends Component {
   render() {
     return (
       <div className="queue">
-        {this.props.items.map((item, index) => (
-          <div className="queue-item" key={item}>
+        {this.props.items.map(item => (
+          <div className="queue-item" key={item.funcName}>
             <pre data-line="2" className="line-numbers">
-              <code className="language-javascript">{item}</code>
+              <code className="language-javascript">{item.funcName}</code>
             </pre>
           </div>
         ))}
