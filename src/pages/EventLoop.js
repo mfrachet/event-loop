@@ -4,6 +4,7 @@ import { Donut } from "../components/Donut";
 import { Cols, Col } from "../components/Cols";
 import { Queue } from "../components/Queue";
 import { Browser } from "../modules/browser";
+import { Line } from "../components/Line";
 
 export class EventLoop extends Component {
   static count = 0;
@@ -58,8 +59,18 @@ export class EventLoop extends Component {
           <Col>
             <Subtitle centered>Main Thread</Subtitle>
             <Browser>
-              Hello world
-              {browserItems.length && "YOU STOPPED THERE"}
+              <Line width="50%" />
+              <Line width="70%" />
+              <Line width="20%" />
+              <br />
+              <Line />
+              <Line />
+              <Line />
+              <br />
+
+              {browserItems.map(item => (
+                <Line key={item} hasAppeared />
+              ))}
             </Browser>
           </Col>
           <Col>

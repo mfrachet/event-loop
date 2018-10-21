@@ -1,0 +1,19 @@
+.line {
+  height: 10px;
+  background-color: #dddddd;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.line-appeared {
+  animation: lineAppear 0.3s linear;
+}
+
+@keyframes lineAppear {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: #dddddd;
+  }
+}
