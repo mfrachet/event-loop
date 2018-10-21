@@ -5,7 +5,7 @@ import "./Stack.css";
 export const Stack = ({ funcs, name, color }) => (
   <div className="stack-center">
     <Subtitle>{name} </Subtitle>
-    <p>Each block is a function</p>
+
     <div className="stack">
       {funcs.map((name, index) => (
         <h3

@@ -1,5 +1,3 @@
-export const caption = "setTimeout and its impact on the stack";
-
 export const snippet = `
 function main() {
 	for (let i = 0; i < 2; i++) {

@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from "react";
-import { Title } from "../components/Title";
 import { Browser } from "../modules/browser";
 import { Cols, Col } from "../components/Cols";
 import { Thread } from "../modules/thread";
@@ -38,30 +37,29 @@ export class AsyncWorld extends Component {
     const { buttonCalls, timeCalls, networkCalls, hasLoaded } = this.state;
     return (
       <Fragment>
-        <Title>Async world</Title>
         <Cols>
-          <Col size={10}>
-            <Thread name="Timer Thread" calls={timeCalls} delay={1000} />
+          <Col>
+            <Thread name="Timer" calls={timeCalls} delay={1000} />
           </Col>
-          <Col size={10}>
+          <Col>
             <Thread
-              name="Network Thread"
+              name="Network"
               calls={networkCalls}
               delay={3000}
               dequeue={this.handleNetworkDequeue}
               color="#E91E63"
             />
           </Col>
-          <Col size={10}>
+          <Col>
             <Thread
-              name="Event Thread"
+              name="Event"
               calls={buttonCalls}
               delay={300}
               dequeue={this.handleButtonDequeue}
               color="#4CAF50"
             />
           </Col>
-          <Col>
+          <Col size={50}>
             <Browser>
               <span className="float-right">
                 <Timer onChange={this.handleTimeChange} />

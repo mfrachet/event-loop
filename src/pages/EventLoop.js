@@ -29,10 +29,10 @@ export class EventLoop extends Component {
 
       EventLoop.count++;
       queue.push({
-        funcName: `setTimeout(
-  () => console.log(${EventLoop.count}),
-0)`,
-        value: `console.log(${EventLoop.count})`
+        funcName: `setTimeout(() => {
+  document.appendChild(element${EventLoop.count})
+}, 0)`,
+        value: EventLoop.count
       });
 
       this.setState({ queue });

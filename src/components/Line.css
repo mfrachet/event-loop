@@ -11,9 +11,11 @@
 
 @keyframes lineAppear {
   from {
-    background-color: red;
+    background-color: #e91e63;
+    margin-top: -5px;
   }
   to {
     background-color: #dddddd;
+    margin-top: 0px;
   }
 }

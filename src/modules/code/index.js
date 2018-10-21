@@ -52,11 +52,7 @@ export class Code extends Component {
     return (
       <Fragment>
         <Subtitle>Code</Subtitle>
-        {steps && (
-          <p>
-            Press <span className="space">space</span> to interact
-          </p>
-        )}
+
         <pre
           className="line-numbers"
           data-line={currentStep ? steps[currentStep].line : 0}
