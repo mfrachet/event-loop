@@ -1,6 +1,3 @@
-export const caption =
-  "Typical call stack implemented by Javascript engines such as V8";
-
 export const snippet = `function add(x, y) {
 	return x + y;
 }

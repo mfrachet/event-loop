@@ -1,8 +1,10 @@
 export const snippet = `
 function main() {
-	for (let i = 0; i < 2; i++) {
-		setTimeout(() => console.log(\`Hey! I m number: \${i}\`), 0);
-	}
+  for (let i = 0; i < 2; i++) {
+    setTimeout(() => {
+      console.log(\`Hey! I m number: \${i}\`)
+    }, 0);
+  }
 }
 
 main();`;

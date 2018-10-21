@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from "react";
+import React, { Component } from "react";
 import { Code } from "../modules/code";
 
 export class SetTimeoutFTW extends Component {
@@ -28,7 +28,7 @@ export class SetTimeoutFTW extends Component {
     const { isPlaying, information } = this.state;
 
     return (
-      <Fragment>
+      <div className="m-t-b">
         <h1>
           setTimeout...
           {information && ` is not parallel: ${information} ms`}
@@ -40,7 +40,7 @@ export class SetTimeoutFTW extends Component {
         <Code snippet="setTimeoutDead" />
 
         {isPlaying && <div>Computing...</div>}
-      </Fragment>
+      </div>
     );
   }
 }

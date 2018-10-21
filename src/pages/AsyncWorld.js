@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { Browser } from "../modules/browser";
 import { Cols, Col } from "../components/Cols";
 import { Thread } from "../modules/thread";
@@ -36,7 +36,7 @@ export class AsyncWorld extends Component {
   render() {
     const { buttonCalls, timeCalls, networkCalls, hasLoaded } = this.state;
     return (
-      <Fragment>
+      <div className="m-t-b">
         <Cols>
           <Col>
             <Thread name="Timer" calls={timeCalls} delay={1000} />
@@ -73,7 +73,7 @@ export class AsyncWorld extends Component {
             </Browser>
           </Col>
         </Cols>
-      </Fragment>
+      </div>
     );
   }
 }

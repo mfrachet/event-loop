@@ -4,7 +4,7 @@ import "./Stack.css";
 
 export const Stack = ({ funcs, name, color }) => (
   <div className="stack-center">
-    <Subtitle>{name} </Subtitle>
+    <Subtitle centered>{name} </Subtitle>
 
     <div className="stack">
       {funcs.map((name, index) => (

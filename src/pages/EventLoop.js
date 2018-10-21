@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { Subtitle } from "../components/Subtitle";
 import { Donut } from "../components/Donut";
 import { Cols, Col } from "../components/Cols";
@@ -53,8 +53,9 @@ export class EventLoop extends Component {
 
   render() {
     const { queue, browserItems } = this.state;
+
     return (
-      <Fragment>
+      <div className="m-t-b">
         <Cols>
           <Col>
             <Subtitle centered>Main Thread</Subtitle>
@@ -82,7 +83,7 @@ export class EventLoop extends Component {
             <Queue items={queue} />
           </Col>
         </Cols>
-      </Fragment>
+      </div>
     );
   }
 }

@@ -17,7 +17,7 @@
 @keyframes animate-left {
   from {
     opacity: 0;
-    margin-left: 50px;
+    margin-left: 150px;
   }
   to {
     opacity: 1;

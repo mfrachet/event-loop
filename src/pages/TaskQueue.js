@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { Cols, Col } from "../components/Cols";
 import { Stack } from "../components/Stack";
 import { Code } from "../modules/code";
@@ -36,9 +36,9 @@ export class TaskQueue extends Component {
 
   render() {
     return (
-      <Fragment>
+      <div className="m-t-b">
         <Cols>
-          <Col>
+          <Col size={50}>
             <Code snippet="async" onLineChange={this.handleChangeLine} />
           </Col>
           <Col>
@@ -56,7 +56,7 @@ export class TaskQueue extends Component {
             />
           </Col>
         </Cols>
-      </Fragment>
+      </div>
     );
   }
 }

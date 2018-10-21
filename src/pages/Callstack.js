@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { Cols, Col } from "../components/Cols";
 import { Stack } from "../components/Stack";
 import { Code } from "../modules/code";
@@ -30,16 +30,16 @@ export class Callstack extends Component {
 
   render() {
     return (
-      <Fragment>
+      <div className="m-t-b">
         <Cols>
           <Col>
             <Code snippet="simple" onLineChange={this.handleChangeLine} />
           </Col>
-          <Col size={25}>
-            <Stack funcs={this.state.funcs} name="Callstack" color="#E91E63" />
+          <Col>
+            <Stack funcs={this.state.funcs} name="Call stack" color="#E91E63" />
           </Col>
         </Cols>
-      </Fragment>
+      </div>
     );
   }
 }
