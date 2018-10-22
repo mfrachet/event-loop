@@ -6,6 +6,8 @@ import { PokeDetail } from "../modules/pokemon";
 import { Timer } from "../modules/browser/Timer";
 
 export class AsyncWorld extends Component {
+  static eventId = 0;
+
   constructor(props) {
     super(props);
 
@@ -17,30 +19,34 @@ export class AsyncWorld extends Component {
     };
   }
 
-  handleTimeChange = newTime => this.setState({ timeCalls: [newTime] });
+  handleTimeChange = newTime =>
+    this.setState({ timeCalls: [{ name: newTime, id: newTime }] });
 
   handleButtonPress = () => {
     const { buttonCalls } = this.state;
 
-    buttonCalls.push("onClick");
+    AsyncWorld.eventId++;
+    buttonCalls.push({ name: "onClick", id: AsyncWorld.eventId });
 
     this.setState({ buttonCalls });
   };
 
   handleButtonDequeue = () => {
-    const { buttonCalls } = this.state;
+    const { buttonCalls, networkCalls } = this.state;
 
     buttonCalls.pop();
+    AsyncWorld.eventId++;
+    networkCalls.push({ name: "Fetch", id: AsyncWorld.eventId });
 
-    this.setState({ buttonCalls, networkCalls: ["Fetch calls"] });
+    this.setState({ buttonCalls, networkCalls });
   };
 
   handleNetworkDequeue = () => {
-    const { buttonCalls } = this.state;
+    const { networkCalls } = this.state;
 
-    buttonCalls.pop();
+    networkCalls.pop();
 
-    this.setState({ networkCalls: buttonCalls, hasLoaded: true });
+    this.setState({ networkCalls, hasLoaded: true });
   };
 
   render() {

@@ -12,12 +12,12 @@ export class Thread extends Component {
         <Subtitle centered>{name}</Subtitle>
         <div className="thread-wrapper">
           <div className="thread">
-            {calls.map((call, index) => (
+            {calls.map(call => (
               <ThreadMarble
-                key={`${call}-${index}`}
+                key={call.id}
                 color={color}
                 delay={delay}
-                name={call}
+                name={call.name}
                 onFinish={this.props.dequeue}
               />
             ))}
