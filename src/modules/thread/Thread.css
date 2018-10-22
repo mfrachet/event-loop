@@ -10,6 +10,11 @@
   justify-content: center;
 }
 
+.thread-marble {
+  margin-left: -35px;
+  position: absolute;
+}
+
 @keyframes move {
   from {
     margin-top: 0;
@@ -21,4 +26,5 @@
 
 .animate-move {
   animation-name: move;
+  margin-top: 230px;
 }

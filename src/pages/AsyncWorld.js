@@ -19,22 +19,33 @@ export class AsyncWorld extends Component {
 
   handleTimeChange = newTime => this.setState({ timeCalls: [newTime] });
 
-  handleButtonPress = () => this.setState({ buttonCalls: ["onClick"] });
+  handleButtonPress = () => {
+    const { buttonCalls } = this.state;
+
+    buttonCalls.push("onClick");
+
+    this.setState({ buttonCalls });
+  };
 
   handleButtonDequeue = () => {
-    const [head, ...tail] = this.state.buttonCalls;
+    const { buttonCalls } = this.state;
 
-    this.setState({ buttonCalls: tail, networkCalls: ["Fetch calls"] });
+    buttonCalls.pop();
+
+    this.setState({ buttonCalls, networkCalls: ["Fetch calls"] });
   };
 
   handleNetworkDequeue = () => {
-    const [head, ...tail] = this.state.buttonCalls;
+    const { buttonCalls } = this.state;
 
-    this.setState({ networkCalls: tail, hasLoaded: true });
+    buttonCalls.pop();
+
+    this.setState({ networkCalls: buttonCalls, hasLoaded: true });
   };
 
   render() {
     const { buttonCalls, timeCalls, networkCalls, hasLoaded } = this.state;
+
     return (
       <div className="m-t-b">
         <Cols>
