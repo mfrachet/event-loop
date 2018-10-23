@@ -8,7 +8,7 @@
   border: 50px solid #dddddd;
 }
 
-@keyframes orbit {
+@keyframes orbit-big {
   from {
     transform: rotate(0deg) translateX(175px) rotate(0deg);
   }
@@ -22,9 +22,37 @@
   height: 30px;
   border-radius: 50%;
   background-color: #ffffff;
-  animation: orbit 4s linear infinite;
+  animation: orbit-big 4s linear infinite;
 }
 
 .donut-content {
   position: absolute;
+}
+
+/* little donut */
+.donut-little {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border: 12px solid #dddddd;
+}
+
+@keyframes orbit-little {
+  from {
+    transform: rotate(0deg) translateX(44px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(44px) rotate(-360deg);
+  }
+}
+
+.donut-item-little {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  animation: orbit-little 2s linear infinite;
 }

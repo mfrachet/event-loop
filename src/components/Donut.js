@@ -16,9 +16,10 @@ export class Donut extends Component {
   }
 
   render() {
+    const { little } = this.props;
     return (
-      <div className="donut">
-        <div className="donut-item" />
+      <div className={`donut${little ? "-little" : ""}`}>
+        <div className={`donut-item${little ? "-little" : ""}`} />
         <div className="donut-content">{this.props.children}</div>
       </div>
     );

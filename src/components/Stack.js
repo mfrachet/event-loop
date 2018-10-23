@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Subtitle } from "./Subtitle";
 import "./Stack.css";
 
 export const Stack = ({ funcs, name, color }) => (
-  <div className="stack-center">
+  <Fragment>
     <Subtitle centered>{name} </Subtitle>
 
     <div className="stack">
@@ -17,5 +17,5 @@ export const Stack = ({ funcs, name, color }) => (
         </h3>
       ))}
     </div>
-  </div>
+  </Fragment>
 );

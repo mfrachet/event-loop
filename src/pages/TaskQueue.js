@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Cols, Col } from "../components/Cols";
 import { Stack } from "../components/Stack";
 import { Code } from "../modules/code";
+import { Donut } from "../components/Donut";
 
 export class TaskQueue extends Component {
   constructor(props) {
@@ -35,6 +36,9 @@ export class TaskQueue extends Component {
   };
 
   render() {
+    const { taskQueue, callstack } = this.state;
+    const isEventLoopVisible = taskQueue.length && !callstack.length;
+
     return (
       <div className="m-t-b">
         <Cols>
@@ -42,18 +46,21 @@ export class TaskQueue extends Component {
             <Code snippet="async" onLineChange={this.handleChangeLine} />
           </Col>
           <Col>
-            <Stack
-              funcs={this.state.callstack}
-              name="Call stack"
-              color="#E91E63"
-            />
+            <Stack funcs={callstack} name="Call stack" color="#E91E63" />
           </Col>
           <Col>
-            <Stack
-              funcs={this.state.taskQueue}
-              name="Task queue"
-              color="#4CAF50"
-            />
+            <div
+              style={{
+                width: "100px",
+                margin: "150px auto",
+                display: isEventLoopVisible ? "block" : "none"
+              }}
+            >
+              <Donut little>Event loop</Donut>
+            </div>
+          </Col>
+          <Col>
+            <Stack funcs={taskQueue} name="Task queue" color="#4CAF50" />
           </Col>
         </Cols>
       </div>

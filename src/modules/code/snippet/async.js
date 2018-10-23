@@ -1,5 +1,4 @@
-export const snippet = `
-function main() {
+export const snippet = `function main() {
   for (let i = 0; i < 2; i++) {
     setTimeout(() => {
       console.log(\`Hey! I m number: \${i}\`)
