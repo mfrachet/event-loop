@@ -69,14 +69,16 @@ export class EventLoop extends Component {
               <Line />
               <br />
 
-              {browserItems.map(item => (
-                <Line key={item} hasAppeared />
+              {browserItems.map((item, index) => (
+                <Line key={`${item.funcName}-${index}`} hasAppeared />
               ))}
             </Browser>
           </Col>
           <Col>
             <Subtitle centered>Event loop</Subtitle>
-            <Donut onHandle={this.dequeue} />
+            <div style={{ width: "400px", margin: "0 auto" }}>
+              <Donut onHandle={this.dequeue} />
+            </div>
           </Col>
           <Col>
             <Subtitle centered>Task Queue</Subtitle>
