@@ -1,11 +1,12 @@
 .poke-detail {
-  border: 1px solid #f1f1f1;
+  border: 1px solid #222222;
   border-radius: 3px;
 }
 
 .poke-head {
+  color: #ffffff;
   padding: 10px;
-  background-color: #f1f1f1;
+  background-color: #222222;
 }
 
 .poke-detail p {

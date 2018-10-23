@@ -1,16 +1,15 @@
 /* The browser window */
 .browser {
-  border: 3px solid #f1f1f1;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  border: 3px solid #222222;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 /* Container for columns and the top "toolbar" */
 .browser-row {
   padding: 10px;
-  background: #f1f1f1;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  display: flex;
+  background: #222222;
 }
 
 /* Create three unequal columns that floats next to each other */
@@ -18,16 +17,9 @@
   float: left;
 }
 
-.browser-left {
-  width: 15%;
-}
-
-.browser-right {
-  width: 10%;
-}
-
 .browser-middle {
-  width: 75%;
+  flex: 1;
+  margin: 0 20px;
 }
 
 /* Clear floats after the columns */
@@ -45,11 +37,11 @@
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
-  margin-right: 4px;
+  margin-left: 4px;
 }
 
 /* Style the input field */
-.browser input[type="text"] {
+input.browser-input {
   width: 100%;
   border-radius: 4px;
   border: none;
@@ -71,5 +63,5 @@
 
 /* Page content */
 .browser-content {
-  padding: 10px;
+  padding: 20px;
 }

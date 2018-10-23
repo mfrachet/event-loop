@@ -21,7 +21,7 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #ffffff;
+  background-color: #9b4dca;
   animation: orbit-big 4s linear infinite;
 }
 
@@ -53,6 +53,6 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background-color: #ffffff;
+  background-color: #9b4dca;
   animation: orbit-little 2s linear infinite;
 }

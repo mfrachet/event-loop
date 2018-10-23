@@ -36,7 +36,7 @@ export class Callstack extends Component {
             <Code snippet="simple" onLineChange={this.handleChangeLine} />
           </Col>
           <Col>
-            <Stack funcs={this.state.funcs} name="Call stack" color="#E91E63" />
+            <Stack funcs={this.state.funcs} name="Call stack" color="#9b4dca" />
           </Col>
         </Cols>
       </div>

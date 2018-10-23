@@ -5,6 +5,8 @@ import { Thread } from "../modules/thread";
 import { PokeDetail } from "../modules/pokemon";
 import { Timer } from "../modules/browser/Timer";
 
+const ONCLICK = "onClick";
+const KEYPRESS = "keyPress";
 export class AsyncWorld extends Component {
   static eventId = 0;
 
@@ -22,21 +24,24 @@ export class AsyncWorld extends Component {
   handleTimeChange = newTime =>
     this.setState({ timeCalls: [{ name: newTime, id: newTime }] });
 
-  handleButtonPress = () => {
+  handleEvent = name => () => {
     const { buttonCalls } = this.state;
 
     AsyncWorld.eventId++;
-    buttonCalls.push({ name: "onClick", id: AsyncWorld.eventId });
+    buttonCalls.push({ name, id: AsyncWorld.eventId });
 
     this.setState({ buttonCalls });
   };
 
-  handleButtonDequeue = () => {
+  handleEventDequeue = eventName => {
     const { buttonCalls, networkCalls } = this.state;
 
     buttonCalls.pop();
-    AsyncWorld.eventId++;
-    networkCalls.push({ name: "Fetch", id: AsyncWorld.eventId });
+
+    if (eventName === ONCLICK) {
+      AsyncWorld.eventId++;
+      networkCalls.push({ name: "Fetch", id: AsyncWorld.eventId });
+    }
 
     this.setState({ buttonCalls, networkCalls });
   };
@@ -64,7 +69,7 @@ export class AsyncWorld extends Component {
               calls={networkCalls}
               delay={3000}
               dequeue={this.handleNetworkDequeue}
-              color="#E91E63"
+              color="#9b4dca"
             />
           </Col>
           <Col>
@@ -72,7 +77,7 @@ export class AsyncWorld extends Component {
               name="Event"
               calls={buttonCalls}
               delay={300}
-              dequeue={this.handleButtonDequeue}
+              dequeue={this.handleEventDequeue}
               color="#4CAF50"
             />
           </Col>
@@ -83,7 +88,13 @@ export class AsyncWorld extends Component {
               </span>
               <h3>An asynchronous world</h3>
 
-              <button onClick={this.handleButtonPress}>
+              <input
+                type="text"
+                placeholder="Fill something right there"
+                onChange={this.handleEvent(KEYPRESS)}
+              />
+
+              <button onClick={this.handleEvent(ONCLICK)}>
                 Show me Bulbasaur!
               </button>
               {hasLoaded && <PokeDetail />}

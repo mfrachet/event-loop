@@ -1,6 +1,6 @@
 .line {
   height: 10px;
-  background-color: #dddddd;
+  background-color: #aaaaaa;
   border-radius: 3px;
   margin-bottom: 10px;
 }
@@ -11,11 +11,11 @@
 
 @keyframes lineAppear {
   from {
-    background-color: #e91e63;
+    background-color: #9b4dca;
     margin-top: -5px;
   }
   to {
-    background-color: #dddddd;
+    background-color: #aaaaaa;
     margin-top: 0px;
   }
 }

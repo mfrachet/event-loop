@@ -7,6 +7,7 @@
 
 .queue-item {
   margin-right: 5px;
+  position: absolute;
   animation: animate-left 0.3s linear;
 }
 

@@ -4,9 +4,9 @@ import { Marble } from "../../components/Marble";
 
 export class ThreadMarble extends Component {
   componentDidMount() {
-    const { onFinish } = this.props;
+    const { onFinish, name } = this.props;
 
-    setTimeout(() => onFinish && onFinish(), this.props.delay - 1);
+    setTimeout(() => onFinish && onFinish(name), this.props.delay - 1);
   }
 
   render() {

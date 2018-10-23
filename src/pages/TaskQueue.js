@@ -46,7 +46,7 @@ export class TaskQueue extends Component {
             <Code snippet="async" onLineChange={this.handleChangeLine} />
           </Col>
           <Col>
-            <Stack funcs={callstack} name="Call stack" color="#E91E63" />
+            <Stack funcs={callstack} name="Call stack" color="#9b4dca" />
           </Col>
           <Col>
             <div
@@ -60,7 +60,7 @@ export class TaskQueue extends Component {
             </div>
           </Col>
           <Col>
-            <Stack funcs={taskQueue} name="Task queue" color="#4CAF50" />
+            <Stack funcs={taskQueue} name="Task queue" color="#222222" />
           </Col>
         </Cols>
       </div>
