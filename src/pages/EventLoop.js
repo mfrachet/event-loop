@@ -70,9 +70,10 @@ export class EventLoop extends Component {
             </Browser>
           </Col>
           <Col>
-            <Subtitle centered>Event loop</Subtitle>
             <div className="center">
-              <Donut onHandle={this.dequeue} />
+              <Donut onHandle={this.dequeue}>
+                <Subtitle>Event loop</Subtitle>
+              </Donut>
               <div style={{ marginTop: "-30px" }}>
                 <Arrow />
                 <h3 className="m-t">Rendering appears here</h3>
