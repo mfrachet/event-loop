@@ -60,3 +60,7 @@
   background-color: #9b4dca;
   animation: orbit-little 2s linear infinite;
 }
+
+.primary {
+  color: #9b4dca;
+}

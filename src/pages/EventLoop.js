@@ -37,10 +37,11 @@ export class EventLoop extends Component {
 
     if (queue.length) {
       const lastCall = queue.shift();
+      this.setState({ queue });
 
       browserItems.push(lastCall);
 
-      this.setState({ queue, browserItems });
+      setTimeout(() => this.setState({ browserItems }), 1000);
     }
   };
 
@@ -74,7 +75,7 @@ export class EventLoop extends Component {
               <Donut onHandle={this.dequeue} />
               <div style={{ marginTop: "-30px" }}>
                 <Arrow />
-                Rendering appears here
+                <h3 className="m-t">Rendering appears here</h3>
               </div>
             </div>
           </Col>
