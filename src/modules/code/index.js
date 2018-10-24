@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Subtitle } from "../../components/Subtitle";
+import { Keyboard } from "../listener/keyboard";
 import "./Code.css";
 
 export class Code extends Component {
@@ -14,35 +15,28 @@ export class Code extends Component {
   }
 
   componentDidMount() {
-    import(`./snippet/${this.props.snippet}`)
-      .then(({ snippet, steps, caption }) =>
+    import(`./snippet/${this.props.snippet}`).then(
+      ({ snippet, steps, caption }) =>
         this.setState({
           snippet,
           steps,
           caption
         })
-      )
-      .then(() => document.addEventListener("keypress", this.handleKeypress));
+    );
   }
 
-  componentWillUnmount() {
-    document.removeEventListener("keypress", this.handleKeypress);
-  }
-
-  handleKeypress = e => {
+  handleSpacePress = e => {
     const { steps, currentStep } = this.state;
 
     if (steps) {
       const nextState = currentStep + 1;
 
-      if (e.key === " ") {
-        if (steps[nextState]) {
-          this.setState({ currentStep: nextState });
-          return this.props.onLineChange(steps[nextState]);
-        }
-
-        this.setState({ currentStep: 0 });
+      if (steps[nextState]) {
+        this.setState({ currentStep: nextState });
+        return this.props.onLineChange(steps[nextState]);
       }
+
+      this.setState({ currentStep: 0 });
     }
   };
 
@@ -51,6 +45,7 @@ export class Code extends Component {
 
     return (
       <Fragment>
+        <Keyboard k={" "} onPress={this.handleSpacePress} />
         <Subtitle>Code</Subtitle>
 
         <pre

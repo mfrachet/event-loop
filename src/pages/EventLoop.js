@@ -6,6 +6,7 @@ import { Queue } from "../components/Queue";
 import { Browser } from "../modules/browser";
 import { Line } from "../components/Line";
 import { Container } from "../components/Container";
+import { Keyboard } from "../modules/listener/keyboard";
 
 export class EventLoop extends Component {
   static count = 0;
@@ -16,28 +17,18 @@ export class EventLoop extends Component {
     this.state = { queue: [], browserItems: [] };
   }
 
-  componentDidMount() {
-    document.addEventListener("keypress", this.handleKeypress);
-  }
+  handleSpacePress = () => {
+    const { queue } = this.state;
 
-  componentWillUnmount() {
-    document.removeEventListener("keypress", this.handleKeypress);
-  }
-
-  handleKeypress = e => {
-    if (e.key === " ") {
-      const { queue } = this.state;
-
-      EventLoop.count++;
-      queue.push({
-        funcName: `setTimeout(() => {
+    EventLoop.count++;
+    queue.push({
+      funcName: `setTimeout(() => {
   document.appendChild(element${EventLoop.count})
 }, 0)`,
-        value: EventLoop.count
-      });
+      value: EventLoop.count
+    });
 
-      this.setState({ queue });
-    }
+    this.setState({ queue });
   };
 
   dequeue = () => {
@@ -57,6 +48,7 @@ export class EventLoop extends Component {
 
     return (
       <Container custom>
+        <Keyboard k={" "} onPress={this.handleSpacePress} />
         <Cols>
           <Col>
             <Subtitle centered>Main Thread</Subtitle>
