@@ -12,7 +12,7 @@ main();
 
 export const steps = {
   1: {
-    line: 10,
+    line: 9,
     funcName: "main"
   },
   2: {
@@ -70,20 +70,24 @@ export const steps = {
     action: "pop"
   },
   15: {
-    line: 10,
-    action: "dequeue",
-    funcName: "callback"
+    line: 9,
+    action: "show-loop"
   },
   16: {
     line: 10,
-    action: "pop"
+    action: "dequeue",
+    funcName: "callback"
   },
   17: {
+    line: 10,
+    action: "pop"
+  },
+  18: {
     line: 10,
     action: "dequeue",
     funcName: "callback"
   },
-  18: {
+  19: {
     line: 10,
     action: "pop"
   }

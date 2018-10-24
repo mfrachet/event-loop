@@ -30,3 +30,21 @@ body {
 .m-t {
   margin-top: 2rem;
 }
+
+.task-queue-loop {
+  position: absolute;
+  margin-left: -62px;
+  margin-top: 150px;
+  background-color: #ffffff;
+  animation: make-visible 1s ease-in;
+}
+
+@keyframes make-visible {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

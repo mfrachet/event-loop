@@ -3,6 +3,7 @@ import { Cols, Col } from "../components/Cols";
 import { Stack } from "../components/Stack";
 import { Code } from "../modules/code";
 import { Container } from "../components/Container";
+import { Donut } from "../components/Donut";
 
 export class TaskQueue extends Component {
   constructor(props) {
@@ -13,19 +14,28 @@ export class TaskQueue extends Component {
 
   handleChangeLine = step => {
     if (step === null) {
-      return this.setState({ callstack: [], taskQueue: [], webApis: [] });
+      return this.setState({
+        callstack: [],
+        taskQueue: [],
+        webApis: [],
+        isLoopVisible: false
+      });
     }
 
-    const { callstack, taskQueue, webApis } = this.state;
+    const { callstack, taskQueue, webApis, isLoopVisible } = this.state;
 
-    if (step.action === "remove-apis") {
-      webApis.pop();
+    let isNewLoopVisible = isLoopVisible;
+
+    if (step.action === "show-loop") {
+      isNewLoopVisible = true;
+    } else if (step.action === "remove-apis") {
+      webApis.shift();
     } else if (step.action === "add-apis") {
       webApis.push(step.funcName);
     } else if (step.action === "enqueue") {
       taskQueue.push(step.funcName);
     } else if (step.action === "dequeue") {
-      taskQueue.pop();
+      taskQueue.shift();
       callstack.push(step.funcName);
     } else {
       if (step.action === "pop") {
@@ -36,11 +46,16 @@ export class TaskQueue extends Component {
       }
     }
 
-    return this.setState({ callstack, taskQueue, webApis });
+    return this.setState({
+      callstack,
+      taskQueue,
+      webApis,
+      isLoopVisible: isNewLoopVisible
+    });
   };
 
   render() {
-    const { taskQueue, callstack, webApis } = this.state;
+    const { taskQueue, callstack, webApis, isLoopVisible } = this.state;
 
     return (
       <Container>
@@ -52,6 +67,11 @@ export class TaskQueue extends Component {
             <Stack funcs={callstack} name="Call stack" color="#9b4dca" />
           </Col>
           <Col>
+            {isLoopVisible && (
+              <div className="task-queue-loop">
+                <Donut little>Event loop</Donut>
+              </div>
+            )}
             <Stack
               funcs={taskQueue}
               name="Task queue"
