@@ -6,7 +6,9 @@ export const snippet = `function main() {
   }
 }
 
-main();`;
+main();
+
+`;
 
 export const steps = {
   1: {
@@ -21,47 +23,68 @@ export const steps = {
     funcName: "setTimeout"
   },
   4: {
-    line: 4,
-    funcName: "callback",
-    action: "enqueue"
+    line: 3,
+    funcName: "setTimeout",
+    action: "add-apis"
   },
   5: {
-    line: 2,
-    action: "pop"
-  },
-  6: {
-    line: 3,
-    funcName: "setTimeout"
-  },
-  7: {
-    line: 4,
-    funcName: "callback",
-    action: "enqueue"
-  },
-  8: {
     line: 5,
     action: "pop"
   },
-  9: {
-    line: 9,
-    action: "pop"
-  },
-  10: {
-    line: 9,
-    action: "dequeue",
+  6: {
+    line: 5,
+    action: "enqueue",
     funcName: "callback"
   },
+  7: {
+    line: 5,
+    action: "remove-apis"
+  },
+  8: {
+    line: 2
+  },
+  9: {
+    line: 3,
+    funcName: "setTimeout"
+  },
+  10: {
+    line: 3,
+    funcName: "setTimeout",
+    action: "add-apis"
+  },
   11: {
-    line: 9,
+    line: 5,
     action: "pop"
   },
   12: {
-    line: 9,
-    action: "dequeue",
+    line: 5,
+    action: "enqueue",
     funcName: "callback"
   },
   13: {
+    line: 5,
+    action: "remove-apis"
+  },
+  14: {
     line: 9,
+    action: "pop"
+  },
+  15: {
+    line: 10,
+    action: "dequeue",
+    funcName: "callback"
+  },
+  16: {
+    line: 10,
+    action: "pop"
+  },
+  17: {
+    line: 10,
+    action: "dequeue",
+    funcName: "callback"
+  },
+  18: {
+    line: 10,
     action: "pop"
   }
 };

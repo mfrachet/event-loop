@@ -5,18 +5,30 @@
   color: #ffffff;
   padding: 20px;
   border-radius: 3px;
+  position: relative;
+}
+
+.box:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 10%;
+  background-color: rgba(255, 255, 255, 0.2);
   animation: animation 1s ease-in-out infinite;
 }
 
-@-webkit-keyframes animation {
+.box span {
+  position: relative;
+}
+
+@keyframes animation {
   0% {
-    background-color: #dddddd;
-  }
-  50% {
-    background-color: #aaaaaa;
+    left: 0;
   }
 
   100% {
-    background-color: #dddddd;
+    left: 90%;
   }
 }

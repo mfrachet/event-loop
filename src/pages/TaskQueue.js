@@ -8,17 +8,21 @@ export class TaskQueue extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { callstack: [], taskQueue: [] };
+    this.state = { callstack: [], taskQueue: [], webApis: [] };
   }
 
   handleChangeLine = step => {
     if (step === null) {
-      return this.setState({ callstack: [], taskQueue: [] });
+      return this.setState({ callstack: [], taskQueue: [], webApis: [] });
     }
 
-    const { callstack, taskQueue } = this.state;
+    const { callstack, taskQueue, webApis } = this.state;
 
-    if (step.action === "enqueue") {
+    if (step.action === "remove-apis") {
+      webApis.pop();
+    } else if (step.action === "add-apis") {
+      webApis.push(step.funcName);
+    } else if (step.action === "enqueue") {
       taskQueue.push(step.funcName);
     } else if (step.action === "dequeue") {
       taskQueue.pop();
@@ -32,11 +36,11 @@ export class TaskQueue extends Component {
       }
     }
 
-    return this.setState({ callstack, taskQueue });
+    return this.setState({ callstack, taskQueue, webApis });
   };
 
   render() {
-    const { taskQueue, callstack } = this.state;
+    const { taskQueue, callstack, webApis } = this.state;
 
     return (
       <Container>
@@ -49,6 +53,9 @@ export class TaskQueue extends Component {
           </Col>
           <Col>
             <Stack funcs={taskQueue} name="Task queue" color="#222222" />
+          </Col>
+          <Col>
+            <Stack funcs={webApis} name="Web APIs" color="#222222" />
           </Col>
         </Cols>
       </Container>
