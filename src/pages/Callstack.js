@@ -31,22 +31,16 @@ export class Callstack extends Component {
 
   render() {
     return (
-      <div className="m-t-b">
-        <Container>
-          <Cols>
-            <Col>
-              <Code snippet="simple" onLineChange={this.handleChangeLine} />
-            </Col>
-            <Col>
-              <Stack
-                funcs={this.state.funcs}
-                name="Call stack"
-                color="#9b4dca"
-              />
-            </Col>
-          </Cols>
-        </Container>
-      </div>
+      <Container>
+        <Cols>
+          <Col>
+            <Code snippet="simple" onLineChange={this.handleChangeLine} />
+          </Col>
+          <Col>
+            <Stack funcs={this.state.funcs} name="Call stack" color="#9b4dca" />
+          </Col>
+        </Cols>
+      </Container>
     );
   }
 }

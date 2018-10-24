@@ -26,3 +26,7 @@ body {
 .m-t-b {
   margin-top: 50px;
 }
+
+.m-t {
+  margin-top: 2rem;
+}

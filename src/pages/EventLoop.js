@@ -56,39 +56,37 @@ export class EventLoop extends Component {
     const { queue, browserItems } = this.state;
 
     return (
-      <div className="m-t-b">
-        <Container custom>
-          <Cols>
-            <Col>
-              <Subtitle centered>Main Thread</Subtitle>
-              <Browser>
-                <Line width="50%" />
-                <Line width="70%" />
-                <Line width="20%" />
-                <br />
-                <Line />
-                <Line />
-                <Line />
-                <br />
+      <Container custom>
+        <Cols>
+          <Col>
+            <Subtitle centered>Main Thread</Subtitle>
+            <Browser>
+              <Line width="50%" />
+              <Line width="70%" />
+              <Line width="20%" />
+              <br />
+              <Line />
+              <Line />
+              <Line />
+              <br />
 
-                {browserItems.map((item, index) => (
-                  <Line key={`${item.funcName}-${index}`} hasAppeared />
-                ))}
-              </Browser>
-            </Col>
-            <Col>
-              <Subtitle centered>Event loop</Subtitle>
-              <div style={{ width: "400px", margin: "0 auto" }}>
-                <Donut onHandle={this.dequeue} />
-              </div>
-            </Col>
-            <Col>
-              <Subtitle centered>Task Queue</Subtitle>
-              <Queue items={queue} />
-            </Col>
-          </Cols>
-        </Container>
-      </div>
+              {browserItems.map((item, index) => (
+                <Line key={`${item.funcName}-${index}`} hasAppeared />
+              ))}
+            </Browser>
+          </Col>
+          <Col>
+            <Subtitle centered>Event loop</Subtitle>
+            <div style={{ width: "400px", margin: "0 auto" }}>
+              <Donut onHandle={this.dequeue} />
+            </div>
+          </Col>
+          <Col>
+            <Subtitle centered>Task Queue</Subtitle>
+            <Queue items={queue} />
+          </Col>
+        </Cols>
+      </Container>
     );
   }
 }

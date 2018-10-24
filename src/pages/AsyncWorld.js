@@ -7,6 +7,8 @@ import { Timer } from "../modules/browser/Timer";
 import { Box } from "../components/Box";
 import { Donut } from "../components/Donut";
 import { Container } from "../components/Container";
+import { Subtitle } from "../components/Subtitle";
+import { Pane } from "../components/Pane";
 
 const ONCLICK = "onClick";
 const KEYPRESS = "keyPress";
@@ -61,10 +63,11 @@ export class AsyncWorld extends Component {
     const { buttonCalls, timeCalls, networkCalls, hasLoaded } = this.state;
 
     return (
-      <div className="m-t-b">
-        <Container custom>
-          <Cols>
-            <Col size={40}>
+      <Container custom>
+        <Cols>
+          <Col size={40}>
+            <Pane>
+              <Subtitle centered>Web APIs</Subtitle>
               <Cols>
                 <Col>
                   <Thread name="Timer" calls={timeCalls} delay={1000} />
@@ -88,45 +91,45 @@ export class AsyncWorld extends Component {
                   />
                 </Col>
               </Cols>
+            </Pane>
+          </Col>
+          <Col>
+            <Browser>
+              <span className="float-right">
+                <Timer onChange={this.handleTimeChange} />
+              </span>
+
+              <h3>An asynchronous world</h3>
+
+              <input
+                type="text"
+                placeholder="Fill something right there"
+                onChange={this.handleEvent(KEYPRESS)}
+              />
+
+              <button onClick={this.handleEvent(ONCLICK)}>
+                Show me Bulbasaur!
+              </button>
+              {hasLoaded && <PokeDetail />}
+            </Browser>
+          </Col>
+        </Cols>
+        <div className="m-t">
+          <Cols>
+            <Col size={40}>
+              <Box>Task queue</Box>
             </Col>
             <Col>
-              <Browser>
-                <span className="float-right">
-                  <Timer onChange={this.handleTimeChange} />
-                </span>
-
-                <h3>An asynchronous world</h3>
-
-                <input
-                  type="text"
-                  placeholder="Fill something right there"
-                  onChange={this.handleEvent(KEYPRESS)}
-                />
-
-                <button onClick={this.handleEvent(ONCLICK)}>
-                  Show me Bulbasaur!
-                </button>
-                {hasLoaded && <PokeDetail />}
-              </Browser>
+              <div style={{ width: "100px", margin: "0 auto" }}>
+                <Donut little />
+              </div>
+            </Col>
+            <Col size={40}>
+              <Box>Call stack</Box>
             </Col>
           </Cols>
-          <div className="m-t-b">
-            <Cols>
-              <Col size={40}>
-                <Box>Task queue</Box>
-              </Col>
-              <Col>
-                <div style={{ width: "100px", margin: "0 auto" }}>
-                  <Donut little />
-                </div>
-              </Col>
-              <Col size={40}>
-                <Box>Call stack</Box>
-              </Col>
-            </Cols>
-          </div>
-        </Container>
-      </div>
+        </div>
+      </Container>
     );
   }
 }
