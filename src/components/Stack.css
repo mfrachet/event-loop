@@ -13,6 +13,20 @@
   border-radius: 0 0 3px 3px;
 }
 
+.stack-no-bottom {
+  border-left: 1px solid #888888;
+  border-right: 1px solid #888888;
+
+  width: 180px;
+  height: 350px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  border-radius: 0 0 3px 3px;
+}
+
 .stack-item {
   height: 100px;
   line-height: 100px;

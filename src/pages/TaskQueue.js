@@ -52,10 +52,15 @@ export class TaskQueue extends Component {
             <Stack funcs={callstack} name="Call stack" color="#9b4dca" />
           </Col>
           <Col>
-            <Stack funcs={taskQueue} name="Task queue" color="#222222" />
+            <Stack
+              funcs={taskQueue}
+              name="Task queue"
+              color="#222222"
+              noBottom
+            />
           </Col>
           <Col>
-            <Stack funcs={webApis} name="Web APIs" color="#222222" />
+            <Stack funcs={webApis} name="Web APIs" color="#222222" noBottom />
           </Col>
         </Cols>
       </Container>
