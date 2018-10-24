@@ -1,0 +1,5 @@
+.main-title {
+  font-size: 40px;
+  margin-top: 5%;
+  animation: make-visible 1s ease-in;
+}

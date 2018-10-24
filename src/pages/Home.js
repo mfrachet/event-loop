@@ -1,7 +1,11 @@
 import React from "react";
+import { MainTitle } from "../components/MainTitle";
+import { Donut } from "../components/Donut";
 
 export const Home = () => (
   <div className="center">
-    <h1>The event loop</h1>
+    <MainTitle>
+      <Donut>The event loop</Donut>
+    </MainTitle>
   </div>
 );
