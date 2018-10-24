@@ -120,9 +120,7 @@ export class AsyncWorld extends Component {
               <Box>Task queue</Box>
             </Col>
             <Col>
-              <div style={{ width: "100px", margin: "0 auto" }}>
-                <Donut little />
-              </div>
+              <Donut little />
             </Col>
             <Col size={40}>
               <Box>Call stack</Box>

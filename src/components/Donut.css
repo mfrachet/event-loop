@@ -1,10 +1,12 @@
 .donut {
+  background-color: #ffffff;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 400px;
   height: 400px;
+  margin: 0 auto;
   border: 50px solid #dddddd;
 }
 
@@ -32,12 +34,14 @@
 /* little donut */
 .donut-little {
   border-radius: 50%;
+  background-color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100px;
   height: 100px;
   border: 12px solid #dddddd;
+  margin: 0 auto;
 }
 
 @keyframes orbit-little {

@@ -3,8 +3,14 @@ import { TaskQueue } from "./pages/TaskQueue";
 import { EventLoop } from "./pages/EventLoop";
 import { AsyncWorld } from "./pages/AsyncWorld";
 import { SetTimeoutFTW } from "./pages/SetTimeoutFtw";
+import { Home } from "./pages/Home";
 
 export const routes = [
+  {
+    name: "Home",
+    to: "/",
+    Component: Home
+  },
   {
     name: "Callstack",
     to: "/callstack",

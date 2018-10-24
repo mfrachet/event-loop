@@ -35,7 +35,6 @@ body {
   position: absolute;
   margin-left: -62px;
   margin-top: 150px;
-  background-color: #ffffff;
   animation: make-visible 1s ease-in;
 }
 

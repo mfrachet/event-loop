@@ -7,6 +7,7 @@ import { Browser } from "../modules/browser";
 import { Line } from "../components/Line";
 import { Container } from "../components/Container";
 import { Keyboard } from "../modules/listener/keyboard";
+import { Arrow } from "../components/Arrow";
 
 export class EventLoop extends Component {
   static count = 0;
@@ -69,8 +70,12 @@ export class EventLoop extends Component {
           </Col>
           <Col>
             <Subtitle centered>Event loop</Subtitle>
-            <div style={{ width: "400px", margin: "0 auto" }}>
+            <div className="center">
               <Donut onHandle={this.dequeue} />
+              <div style={{ marginTop: "-30px" }}>
+                <Arrow />
+                Rendering appears here
+              </div>
             </div>
           </Col>
           <Col>
