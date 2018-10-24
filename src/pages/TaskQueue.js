@@ -3,6 +3,7 @@ import { Cols, Col } from "../components/Cols";
 import { Stack } from "../components/Stack";
 import { Code } from "../modules/code";
 import { Donut } from "../components/Donut";
+import { Container } from "../components/Container";
 
 export class TaskQueue extends Component {
   constructor(props) {
@@ -41,28 +42,30 @@ export class TaskQueue extends Component {
 
     return (
       <div className="m-t-b">
-        <Cols>
-          <Col size={50}>
-            <Code snippet="async" onLineChange={this.handleChangeLine} />
-          </Col>
-          <Col>
-            <Stack funcs={callstack} name="Call stack" color="#9b4dca" />
-          </Col>
-          <Col>
-            <div
-              style={{
-                width: "100px",
-                margin: "150px auto",
-                display: isEventLoopVisible ? "block" : "none"
-              }}
-            >
-              <Donut little>Event loop</Donut>
-            </div>
-          </Col>
-          <Col>
-            <Stack funcs={taskQueue} name="Task queue" color="#222222" />
-          </Col>
-        </Cols>
+        <Container>
+          <Cols>
+            <Col size={50}>
+              <Code snippet="async" onLineChange={this.handleChangeLine} />
+            </Col>
+            <Col>
+              <Stack funcs={callstack} name="Call stack" color="#9b4dca" />
+            </Col>
+            <Col>
+              <div
+                style={{
+                  width: "100px",
+                  margin: "150px auto",
+                  display: isEventLoopVisible ? "block" : "none"
+                }}
+              >
+                <Donut little>Event loop</Donut>
+              </div>
+            </Col>
+            <Col>
+              <Stack funcs={taskQueue} name="Task queue" color="#222222" />
+            </Col>
+          </Cols>
+        </Container>
       </div>
     );
   }

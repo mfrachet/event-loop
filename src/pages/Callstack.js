@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Cols, Col } from "../components/Cols";
 import { Stack } from "../components/Stack";
 import { Code } from "../modules/code";
+import { Container } from "../components/Container";
 
 export class Callstack extends Component {
   constructor(props) {
@@ -31,14 +32,20 @@ export class Callstack extends Component {
   render() {
     return (
       <div className="m-t-b">
-        <Cols>
-          <Col>
-            <Code snippet="simple" onLineChange={this.handleChangeLine} />
-          </Col>
-          <Col>
-            <Stack funcs={this.state.funcs} name="Call stack" color="#9b4dca" />
-          </Col>
-        </Cols>
+        <Container>
+          <Cols>
+            <Col>
+              <Code snippet="simple" onLineChange={this.handleChangeLine} />
+            </Col>
+            <Col>
+              <Stack
+                funcs={this.state.funcs}
+                name="Call stack"
+                color="#9b4dca"
+              />
+            </Col>
+          </Cols>
+        </Container>
       </div>
     );
   }

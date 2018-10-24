@@ -5,6 +5,7 @@ import { Cols, Col } from "../components/Cols";
 import { Queue } from "../components/Queue";
 import { Browser } from "../modules/browser";
 import { Line } from "../components/Line";
+import { Container } from "../components/Container";
 
 export class EventLoop extends Component {
   static count = 0;
@@ -56,35 +57,37 @@ export class EventLoop extends Component {
 
     return (
       <div className="m-t-b">
-        <Cols>
-          <Col>
-            <Subtitle centered>Main Thread</Subtitle>
-            <Browser>
-              <Line width="50%" />
-              <Line width="70%" />
-              <Line width="20%" />
-              <br />
-              <Line />
-              <Line />
-              <Line />
-              <br />
+        <Container custom>
+          <Cols>
+            <Col>
+              <Subtitle centered>Main Thread</Subtitle>
+              <Browser>
+                <Line width="50%" />
+                <Line width="70%" />
+                <Line width="20%" />
+                <br />
+                <Line />
+                <Line />
+                <Line />
+                <br />
 
-              {browserItems.map((item, index) => (
-                <Line key={`${item.funcName}-${index}`} hasAppeared />
-              ))}
-            </Browser>
-          </Col>
-          <Col>
-            <Subtitle centered>Event loop</Subtitle>
-            <div style={{ width: "400px", margin: "0 auto" }}>
-              <Donut onHandle={this.dequeue} />
-            </div>
-          </Col>
-          <Col>
-            <Subtitle centered>Task Queue</Subtitle>
-            <Queue items={queue} />
-          </Col>
-        </Cols>
+                {browserItems.map((item, index) => (
+                  <Line key={`${item.funcName}-${index}`} hasAppeared />
+                ))}
+              </Browser>
+            </Col>
+            <Col>
+              <Subtitle centered>Event loop</Subtitle>
+              <div style={{ width: "400px", margin: "0 auto" }}>
+                <Donut onHandle={this.dequeue} />
+              </div>
+            </Col>
+            <Col>
+              <Subtitle centered>Task Queue</Subtitle>
+              <Queue items={queue} />
+            </Col>
+          </Cols>
+        </Container>
       </div>
     );
   }
