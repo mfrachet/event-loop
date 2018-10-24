@@ -5,7 +5,6 @@ import bulba from "./1.png";
 
 export const PokeDetail = () => (
   <div className="poke-detail">
-    <div className="poke-head">Bulbasaur</div>
     <Cols>
       <Col size={20}>
         <img src={bulba} alt="Bulbasaur" />

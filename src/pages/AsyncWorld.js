@@ -4,6 +4,8 @@ import { Cols, Col } from "../components/Cols";
 import { Thread } from "../modules/thread";
 import { PokeDetail } from "../modules/pokemon";
 import { Timer } from "../modules/browser/Timer";
+import { Box } from "../components/Box";
+import { Donut } from "../components/Donut";
 
 const ONCLICK = "onClick";
 const KEYPRESS = "keyPress";
@@ -60,32 +62,37 @@ export class AsyncWorld extends Component {
     return (
       <div className="m-t-b">
         <Cols>
-          <Col>
-            <Thread name="Timer" calls={timeCalls} delay={1000} />
+          <Col size={40}>
+            <Cols>
+              <Col>
+                <Thread name="Timer" calls={timeCalls} delay={1000} />
+              </Col>
+              <Col>
+                <Thread
+                  name="Network"
+                  calls={networkCalls}
+                  delay={3000}
+                  dequeue={this.handleNetworkDequeue}
+                  color="#9b4dca"
+                />
+              </Col>
+              <Col>
+                <Thread
+                  name="Event"
+                  calls={buttonCalls}
+                  delay={300}
+                  dequeue={this.handleEventDequeue}
+                  color="#4CAF50"
+                />
+              </Col>
+            </Cols>
           </Col>
           <Col>
-            <Thread
-              name="Network"
-              calls={networkCalls}
-              delay={3000}
-              dequeue={this.handleNetworkDequeue}
-              color="#9b4dca"
-            />
-          </Col>
-          <Col>
-            <Thread
-              name="Event"
-              calls={buttonCalls}
-              delay={300}
-              dequeue={this.handleEventDequeue}
-              color="#4CAF50"
-            />
-          </Col>
-          <Col size={50}>
             <Browser>
               <span className="float-right">
                 <Timer onChange={this.handleTimeChange} />
               </span>
+
               <h3>An asynchronous world</h3>
 
               <input
@@ -101,6 +108,21 @@ export class AsyncWorld extends Component {
             </Browser>
           </Col>
         </Cols>
+        <div className="m-t-b">
+          <Cols>
+            <Col size={40}>
+              <Box>Task queue</Box>
+            </Col>
+            <Col>
+              <div style={{ width: "100px", margin: "0 auto" }}>
+                <Donut little />
+              </div>
+            </Col>
+            <Col size={40}>
+              <Box>Call stack</Box>
+            </Col>
+          </Cols>
+        </div>
       </div>
     );
   }
