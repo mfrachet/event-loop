@@ -6,7 +6,7 @@ import { Queue } from "../components/Queue";
 import { Browser } from "../modules/browser";
 import { Line } from "../components/Line";
 import { Container } from "../components/Container";
-import { Keyboard } from "../modules/listener/keyboard";
+import { Keyboard } from "../modules/listener/Keyboard";
 import { Arrow } from "../components/Arrow";
 
 export class EventLoop extends Component {

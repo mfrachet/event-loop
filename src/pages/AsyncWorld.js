@@ -120,7 +120,7 @@ export class AsyncWorld extends Component {
               <Box>Task queue</Box>
             </Col>
             <Col>
-              <Donut little />
+              <Donut little>Event loop</Donut>
             </Col>
             <Col size={40}>
               <Box>Call stack</Box>

@@ -1,0 +1,33 @@
+.keyboard {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: #dddddd;
+  z-index: 9999;
+  animation: appear 0.5s ease;
+  overflow: hidden;
+}
+
+@keyframes appear {
+  from {
+    bottom: -100px;
+  }
+
+  to {
+    bottom: 20px;
+  }
+}
+
+.key {
+  box-shadow: inset 0 0 25px #e8e8e8, 0 1px 0 #c3c3c3, 0 2px 0 #c9c9c9,
+    0 2px 3px #333;
+}
+
+.space {
+  padding: 5px 70px;
+  text-transform: uppercase;
+  background-color: #ffffff;
+  border-radius: 2px;
+}

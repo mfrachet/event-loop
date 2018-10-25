@@ -1,4 +1,5 @@
-import { Component } from "react";
+import React, { Component } from "react";
+import "./Keyboard.css";
 
 export class Keyboard extends Component {
   componentDidMount() {
@@ -16,10 +17,14 @@ export class Keyboard extends Component {
   };
 
   render() {
-    const { children } = this.props;
+    const { k } = this.props;
+    const letter = k === " " ? "space" : k;
 
-    return children || "";
+    return (
+      <div className="keyboard">
+        Keyboard feature is activated on this page. Press{" "}
+        <span className={`key ${letter}`}>{letter}</span>
+      </div>
+    );
   }
 }
-
-Keyboard.propTypes = {};

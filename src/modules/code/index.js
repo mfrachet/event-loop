@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Subtitle } from "../../components/Subtitle";
-import { Keyboard } from "../listener/keyboard";
+import { Keyboard } from "../listener/Keyboard";
 import "./Code.css";
 
 export class Code extends Component {
@@ -45,7 +45,6 @@ export class Code extends Component {
 
     return (
       <Fragment>
-        <Keyboard k={" "} onPress={this.handleSpacePress} />
         <Subtitle>Code</Subtitle>
 
         <pre
@@ -55,6 +54,7 @@ export class Code extends Component {
           <code className="language-javascript">{snippet}</code>
         </pre>
         {caption && <p className="italic">{caption}</p>}
+        <Keyboard k={" "} onPress={this.handleSpacePress} />
       </Fragment>
     );
   }
