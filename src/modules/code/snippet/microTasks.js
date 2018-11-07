@@ -17,80 +17,77 @@ main();
 
 export const steps = {
   1: {
-    line: 9,
+    line: 15,
     funcName: "main"
   },
   2: {
-    line: 2
+    line: 2,
+    funcName: "fetch 1",
+    action: "add-apis"
   },
   3: {
-    line: 3,
-    funcName: "setTimeout"
+    line: 5
   },
   4: {
-    line: 3,
+    line: 6,
     funcName: "setTimeout",
-    action: "add-apis"
+    action: "enqueue"
   },
   5: {
-    line: 5,
-    action: "pop"
-  },
-  6: {
-    line: 5,
-    action: "enqueue",
-    funcName: "callback"
-  },
-  7: {
-    line: 5,
+    line: 9,
     action: "remove-apis"
   },
-  8: {
-    line: 2
+  6: {
+    line: 9,
+    action: "enqueue-micro",
+    funcName: "fetch result 1"
   },
-  9: {
-    line: 3,
-    funcName: "setTimeout"
-  },
-  10: {
-    line: 3,
-    funcName: "setTimeout",
+  7: {
+    line: 10,
+    funcName: "fetch 2",
     action: "add-apis"
   },
+  8: {
+    line: 12,
+    action: "remove-apis"
+  },
+  9: {
+    line: 12,
+    action: "enqueue-micro",
+    funcName: "fetch result 2"
+  },
+  10: {
+    line: 15
+  },
   11: {
-    line: 5,
+    line: 16,
     action: "pop"
   },
   12: {
-    line: 5,
-    action: "enqueue",
-    funcName: "callback"
+    line: 3,
+    action: "dequeue-micro",
+    funcName: "fetch result 1"
   },
   13: {
-    line: 5,
-    action: "remove-apis"
+    line: 16,
+    action: "pop"
   },
   14: {
-    line: 9,
-    action: "pop"
+    line: 11,
+    action: "dequeue-micro",
+    funcName: "fetch result 2"
   },
-
   15: {
-    line: 10,
-    action: "dequeue",
-    funcName: "callback"
+    line: 16,
+    action: "pop"
   },
   16: {
-    line: 10,
-    action: "pop"
+    line: 7,
+    action: "dequeue",
+    funcName: "setTimeout"
   },
   17: {
-    line: 10,
-    action: "dequeue",
-    funcName: "callback"
-  },
-  18: {
-    line: 10,
+    line: 16,
     action: "pop"
   }
 };

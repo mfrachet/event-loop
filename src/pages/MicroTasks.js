@@ -67,16 +67,16 @@ export class MicroTasks extends Component {
           </Col>
           <Col>
             <Stack
-              funcs={taskQueue}
-              name="Task queue"
+              funcs={microQueue}
+              name="Micro tasks"
               color="#222222"
               noBottom
             />
           </Col>
           <Col>
             <Stack
-              funcs={microQueue}
-              name="Micro tasks"
+              funcs={taskQueue}
+              name="Task queue"
               color="#222222"
               noBottom
             />
