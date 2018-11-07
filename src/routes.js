@@ -1,8 +1,7 @@
 import { Callstack } from "./pages/Callstack";
 import { TaskQueue } from "./pages/TaskQueue";
-import { EventLoop } from "./pages/EventLoop";
+import { Raf } from "./pages/Raf";
 import { AsyncWorld } from "./pages/AsyncWorld";
-import { SetTimeoutFTW } from "./pages/SetTimeoutFtw";
 import { Home } from "./pages/Home";
 
 export const routes = [
@@ -22,18 +21,13 @@ export const routes = [
     Component: TaskQueue
   },
   {
-    name: "Event loop",
-    to: "/event-loop",
-    Component: EventLoop
+    name: "requestAnimationFrame",
+    to: "/ref",
+    Component: Raf
   },
   {
     name: "Async world",
     to: "/async-world",
     Component: AsyncWorld
-  },
-  {
-    name: "SetTimeout",
-    to: "/set-timeout",
-    Component: SetTimeoutFTW
   }
 ];

@@ -9,7 +9,7 @@ import { Container } from "../components/Container";
 import { Keyboard } from "../modules/listener/Keyboard";
 import { Arrow } from "../components/Arrow";
 
-export class EventLoop extends Component {
+export class Raf extends Component {
   static count = 0;
 
   constructor(props) {
@@ -21,12 +21,12 @@ export class EventLoop extends Component {
   handleSpacePress = () => {
     const { queue } = this.state;
 
-    EventLoop.count++;
+    Raf.count++;
     queue.push({
-      funcName: `setTimeout(() => {
-  document.appendChild(element${EventLoop.count})
-}, 0)`,
-      value: EventLoop.count
+      funcName: `requestAnimationFrame(() => {
+  newLine.style.display = 'block';
+});`,
+      value: Raf.count
     });
 
     this.setState({ queue });
@@ -50,11 +50,11 @@ export class EventLoop extends Component {
 
     return (
       <Container custom>
-        <Keyboard k={" "} onPress={this.handleSpacePress} />
         <Cols>
           <Col>
-            <Subtitle centered>Main Thread</Subtitle>
+            <Subtitle centered>Browser</Subtitle>
             <Browser>
+              <button onClick={this.handleSpacePress}>Raf call</button>
               <Line width="50%" />
               <Line width="70%" />
               <Line width="20%" />
@@ -81,7 +81,7 @@ export class EventLoop extends Component {
             </div>
           </Col>
           <Col>
-            <Subtitle centered>Task Queue</Subtitle>
+            <Subtitle centered>Render Queue</Subtitle>
             <Queue items={queue} />
           </Col>
         </Cols>
@@ -90,4 +90,4 @@ export class EventLoop extends Component {
   }
 }
 
-EventLoop.propTypes = {};
+Raf.propTypes = {};

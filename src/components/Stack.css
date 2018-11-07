@@ -1,7 +1,7 @@
 .stack {
-  border-left: 1px solid #888888;
-  border-right: 1px solid #888888;
-  border-bottom: 1px solid #888888;
+  border-left: 3px solid #888888;
+  border-right: 3px solid #888888;
+  border-bottom: 3px solid #888888;
 
   width: 180px;
   height: 350px;
@@ -14,8 +14,8 @@
 }
 
 .stack-no-bottom {
-  border-left: 1px solid #888888;
-  border-right: 1px solid #888888;
+  border-left: 3px solid #888888;
+  border-right: 3px solid #888888;
 
   width: 180px;
   height: 350px;

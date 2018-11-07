@@ -117,12 +117,15 @@ export class AsyncWorld extends Component {
         <div className="m-t">
           <Cols>
             <Col size={40}>
-              <Box>Task queue</Box>
+              <Subtitle centered>Enqueue tasks</Subtitle>
+              <Box>Different task queues</Box>
             </Col>
             <Col>
+              <Subtitle centered>Handle transitions</Subtitle>
               <Donut little>Event loop</Donut>
             </Col>
             <Col size={40}>
+              <Subtitle centered>Execute code in the main thread</Subtitle>
               <Box>Call stack</Box>
             </Col>
           </Cols>
