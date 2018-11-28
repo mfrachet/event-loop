@@ -40,7 +40,7 @@ export const steps = {
   6: {
     line: 9,
     action: "enqueue-micro",
-    funcName: "fetch result 1"
+    funcName: "fetch cb 1"
   },
   7: {
     line: 9,
@@ -48,7 +48,7 @@ export const steps = {
   },
   8: {
     line: 9,
-    funcName: "setTimeout",
+    funcName: "timeout cb",
     action: "enqueue"
   },
   9: {
@@ -63,7 +63,7 @@ export const steps = {
   11: {
     line: 12,
     action: "enqueue-micro",
-    funcName: "fetch result 2"
+    funcName: "fetch cb 2"
   },
   12: {
     line: 15
@@ -75,7 +75,7 @@ export const steps = {
   14: {
     line: 3,
     action: "dequeue-micro",
-    funcName: "fetch result 1"
+    funcName: "fetch cb 1"
   },
   15: {
     line: 16,
@@ -84,7 +84,7 @@ export const steps = {
   16: {
     line: 11,
     action: "dequeue-micro",
-    funcName: "fetch result 2"
+    funcName: "fetch cb 2"
   },
   17: {
     line: 16,
@@ -93,7 +93,7 @@ export const steps = {
   18: {
     line: 7,
     action: "dequeue",
-    funcName: "setTimeout"
+    funcName: "timeout cb"
   },
   19: {
     line: 16,
