@@ -31,7 +31,7 @@ export const steps = {
   4: {
     line: 6,
     funcName: "setTimeout",
-    action: "enqueue"
+    action: "add-apis"
   },
   5: {
     line: 9,
@@ -43,50 +43,59 @@ export const steps = {
     funcName: "fetch result 1"
   },
   7: {
+    line: 9,
+    action: "remove-apis"
+  },
+  8: {
+    line: 9,
+    funcName: "setTimeout",
+    action: "enqueue"
+  },
+  9: {
     line: 10,
     funcName: "fetch 2",
     action: "add-apis"
   },
-  8: {
+  10: {
     line: 12,
     action: "remove-apis"
   },
-  9: {
+  11: {
     line: 12,
     action: "enqueue-micro",
     funcName: "fetch result 2"
   },
-  10: {
-    line: 15
-  },
-  11: {
-    line: 16,
-    action: "pop"
-  },
   12: {
-    line: 3,
-    action: "dequeue-micro",
-    funcName: "fetch result 1"
+    line: 15
   },
   13: {
     line: 16,
     action: "pop"
   },
   14: {
-    line: 11,
+    line: 3,
     action: "dequeue-micro",
-    funcName: "fetch result 2"
+    funcName: "fetch result 1"
   },
   15: {
     line: 16,
     action: "pop"
   },
   16: {
+    line: 11,
+    action: "dequeue-micro",
+    funcName: "fetch result 2"
+  },
+  17: {
+    line: 16,
+    action: "pop"
+  },
+  18: {
     line: 7,
     action: "dequeue",
     funcName: "setTimeout"
   },
-  17: {
+  19: {
     line: 16,
     action: "pop"
   }
