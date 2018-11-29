@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{20:function(n,t,o){"use strict";o.r(t),o.d(t,"caption",function(){return e}),o.d(t,"snippet",function(){return i});var e="Over usage of setTimeout function to prove that JavaScript isn't parralel",i='for (let i = 0; i < 100000; i++) {\n\tsetTimeout(() => {\n\t\tconsole.log("Hello world")\n\t}, 0);\n}\n\nconst start = Date.now();\n\nsetTimeout(() => {\n\tconst end = Date.now();\n\n\tconsole.log(end - start);\n}, 1000);'}}]);
+//# sourceMappingURL=2.c63ded84.chunk.js.map
