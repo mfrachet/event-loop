@@ -2,6 +2,7 @@
   "name": "event-loop",
   "version": "0.0.1",
   "private": false,
+  "homepage": "https://mfrachet.github.io/event-loop",
   "dependencies": {
     "moment": "^2.22.2",
     "react": "^16.5.2",
