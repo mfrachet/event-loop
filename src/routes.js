@@ -26,11 +26,11 @@ export const routes = [
     to: "/micro-tasks",
     Component: MicroTasks
   },
-  {
-    name: "requestAnimationFrame",
-    to: "/ref",
-    Component: Raf
-  },
+  // {
+  //   name: "requestAnimationFrame",
+  //   to: "/ref",
+  //   Component: Raf
+  // },
   {
     name: "Async world",
     to: "/async-world",
